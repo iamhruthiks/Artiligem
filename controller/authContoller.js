@@ -22,7 +22,7 @@ exports.registerController = async (req, res, next) => {
             return next(new errorResponse("email is already registered", 500))
         }
         const user = await userModel.create({ username, email, password })
-        sendToken(user, 201, res)
+        this.sendToken(user, 201, res)
     } catch (error) {
         console.log(error)
         next(error)
@@ -31,24 +31,26 @@ exports.registerController = async (req, res, next) => {
 
 // login
 exports.loginController = async (req, res, next) => {
+    console.log("hitting here")
+    console.log(req.body)
     try {
-        const { email, passowrd } = req.body
+        const { email, password } = req.body
 
         // validation
-        if (!email || !passowrd) {
+        if (!email || !password) {
             return next(new errorResponse("please provide email or password"))
         }
         const user = await userModel.findOne({ email })
         if (!user) {
             return next(new errorResponse("invalid creditial", 401))
         }
-        const isMatch = await userModel.matchpassword(passowrd)
+        const isMatch = await user.matchPassword(password)
         if (!isMatch) {
             return next(new errorResponse("invalid creditial", 401))
         }
 
         // res
-        sendToken(user, 200, res)
+        this.sendToken(user, 200, res)
     } catch (error) {
         console.log(error)
         next(error)

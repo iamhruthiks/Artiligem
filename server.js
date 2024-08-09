@@ -29,7 +29,7 @@ app.use(errorHandler)
 //api routes
 app.use("/api/v1/auth", authRoutes)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 //listen server
 app.listen(PORT, () => {
     console.log(`server running in ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white)
