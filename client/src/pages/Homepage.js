@@ -1,10 +1,12 @@
 import React from 'react'
+import { Box, Typography, Card, Stack } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const Homepage = () => {
     return (
-        <div style={{ marginTop: "100px" }}>
-            <h1>Home Page</h1>
-        </div>
+        <Box p={2}>
+
+        </Box>
     )
 }
 

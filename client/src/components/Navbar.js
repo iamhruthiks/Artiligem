@@ -22,6 +22,8 @@ import toast from 'react-hot-toast';
 
 const drawerWidth = 240;
 
+
+
 function Navbar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -29,34 +31,6 @@ function Navbar(props) {
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
-
-    const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
-            </Typography>
-            <Divider />
-            <List >
-                <ListItem className='listitem' disablePadding>
-                    <ListItemButton  >
-                        <Link to="/" className='drawerlinks'> <ListItemText>Home</ListItemText></Link>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem className='listitem' disablePadding>
-                    <ListItemButton>
-                        <Link to="/register" className='drawerlinks'> <ListItemText>Sign Up</ListItemText></Link>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem className='listitem' disablePadding>
-                    <ListItemButton>
-                        <Link to="/login" className='drawerlinks'> <ListItemText>Sign In</ListItemText></Link>
-                    </ListItemButton>
-                </ListItem>
-            </List>
-        </Box>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
 
     const loggedIn = JSON.parse(localStorage.getItem("authToken"))
 
@@ -74,10 +48,55 @@ function Navbar(props) {
         }
     }
 
+    const drawer = (
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ my: 2 }}>
+                MUI
+            </Typography>
+            <Divider />
+            <List >
+                <ListItem className='listitem' disablePadding>
+                    <ListItemButton  >
+                        <Link to="/" className='drawerlinks'> <ListItemText>Home</ListItemText></Link>
+                    </ListItemButton>
+                </ListItem>
+                {!loggedIn ? (
+                    <>
+                        <ListItem className='listitem' disablePadding>
+                            <ListItemButton>
+                                <Link to="/register" className='drawerlinks'> <ListItemText>Sign Up</ListItemText></Link>
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem className='listitem' disablePadding>
+                            <ListItemButton>
+                                <Link to="/login" className='drawerlinks'> <ListItemText>Login</ListItemText></Link>
+                            </ListItemButton>
+                        </ListItem>
+                    </>
+
+                ) : (
+                    <ListItem className='listitem' disablePadding>
+                        <ListItemButton>
+                            <Link to="/login" className='drawerlinks' onClick={handleLogout}> <ListItemText>Logout</ListItemText></Link>
+                        </ListItemButton>
+                    </ListItem>
+                )}
+            </List>
+        </Box>
+    );
+
+    const container = window !== undefined ? () => window().document.body : undefined;
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" color='success' >
+            <AppBar component="nav" position='static'
+                sx={{
+                    backgroundColor: "black",
+                    '&:hover': {
+                        boxShadow: "0 0 40px #ffffff",
+                    }
+                }} >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -99,7 +118,7 @@ function Navbar(props) {
                         <Button sx={{ color: 'white', fontSize: "15px" }}>
                             <Link className='navlinks' to="/">Home</Link>
                             {
-                                loggedIn ? (<Link className='navlinks' to="/login" onClick={handleLogout}>Logout</Link>) : (<><Link className='navlinks' to="/register">Sign up</Link><Link className='navlinks' to="/login">Sign In</Link></>)
+                                loggedIn ? (<Link className='navlinks' to="/login" onClick={handleLogout}>Logout</Link>) : (<><Link className='navlinks' to="/register">Sign up</Link><Link className='navlinks' to="/login">Login</Link></>)
                             }
 
                         </Button>

@@ -31,8 +31,6 @@ exports.registerController = async (req, res, next) => {
 
 // login
 exports.loginController = async (req, res, next) => {
-    console.log("hitting here")
-    console.log(req.body)
     try {
         const { email, password } = req.body
 
@@ -42,11 +40,11 @@ exports.loginController = async (req, res, next) => {
         }
         const user = await userModel.findOne({ email })
         if (!user) {
-            return next(new errorResponse("invalid creditial", 401))
+            return next(new errorResponse("invalid credential", 401))
         }
         const isMatch = await user.matchPassword(password)
         if (!isMatch) {
-            return next(new errorResponse("invalid creditial", 401))
+            return next(new errorResponse("invalid credential", 401))
         }
 
         // res

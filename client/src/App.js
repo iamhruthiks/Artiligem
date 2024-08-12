@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import { Toaster } from 'react-hot-toast'
+import Summary from './pages/Summary';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/summary' element={<Summary />} />
       </Routes>
     </>
   );

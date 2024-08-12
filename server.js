@@ -9,6 +9,7 @@ const errorHandler = require("./middelware/errorMiddleware")
 
 // routes path
 const authRoutes = require("./routes/authRoutes")
+const geminiRoutes = require("./routes/geminiRoutes")
 
 // dotenv
 dotenv.config()
@@ -28,6 +29,7 @@ app.use(errorHandler)
 
 //api routes
 app.use("/api/v1/auth", authRoutes)
+app.use("/api/v1/gemini", geminiRoutes)
 
 const PORT = process.env.PORT || 8080
 //listen server
