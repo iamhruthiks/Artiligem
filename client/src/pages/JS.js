@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import axios from 'axios'
 
-const Summary = () => {
+const JS = () => {
     const navigate = useNavigate()
     useEffect(() => {
         const loggedIn = JSON.parse(localStorage.getItem("authToken"))
@@ -20,15 +20,15 @@ const Summary = () => {
 
     // states
     const [text, setText] = useState("")
-    const [summary, setSummary] = useState("")
+    const [jscode, setJScode] = useState("")
     const [error, setError] = useState("")
 
     // summary ctrl
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const { data } = await axios.post('/api/v1/gemini/summary', { text })
-            setSummary(data)
+            const { data } = await axios.post('/api/v1/gemini/js', { text })
+            setJScode(data)
         } catch (err) {
             console.log(err)
             if (err.response.data.error) {
@@ -52,10 +52,10 @@ const Summary = () => {
                 <Alert severity='error' sx={{ mb: 2 }}>{error}</Alert>
             </Collapse>
             <form onSubmit={handleSubmit} method='POST'>
-                <Typography variant='h4'>Summarize Text</Typography>
+                <Typography variant='h4'>Generate JS code</Typography>
                 <TextField
                     color='primary'
-                    placeholder='add your text' required
+                    placeholder='enter the question' required
                     type='text'
                     multiline={true}
                     margin='normal'
@@ -79,17 +79,17 @@ const Summary = () => {
                     </Link>
                 </Typography>
             </form>
-            {summary ? (
+            {jscode ? (
                 <Card sx={{ mt: 4, height: "500px", boxShadow: 10 }}>
-                    <Typography p={2} sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.5, overflow: 'auto', maxHeight: '100%' }}>{summary}</Typography>
+                    <Typography p={2} sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.5, overflow: 'auto', maxHeight: '100%' }}>{jscode}</Typography>
                 </Card>
             ) : (
                 <Card sx={{ mt: 4, height: "500px", boxShadow: 10 }}>
-                    <Typography variant='h5' sx={{ textAlign: "center", verticalAlign: "middel", lineHeight: "450px" }}>Your summary will appear here</Typography>
+                    <Typography variant='h5' sx={{ textAlign: "center", verticalAlign: "middel", lineHeight: "450px" }}>Your JS code will appear here</Typography>
                 </Card>
             )}
         </Box >
     )
 }
 
-export default Summary
+export default JS

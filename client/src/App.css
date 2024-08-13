@@ -11,9 +11,8 @@
 
 .navlinks:hover {
     background: #ffffff;
-    color: rgb(0, 0, 0);
+    color: rgb(25, 118, 210);
     border-radius: 10px;
-    box-shadow: 0 0 25px rgb(3, 233, 244), 0 0 100px rgb(3, 233, 244);
 }
 
 .drawerlinks {
@@ -35,16 +34,3 @@
 .listitem:hover {
     background: rgb(25, 118, 210);
 }
-
-.box1:hover {
-    transition: 1s ease-in-out;
-    box-shadow: 0 0 40px #ffffff;
-}
-
-.box2:hover {
-    transition: 1s ease-in-out;
-    box-shadow: 0 0 10px #ffffff;
-}
-
-
-/* #00ff04 */

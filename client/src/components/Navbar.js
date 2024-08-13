@@ -40,6 +40,7 @@ function Navbar(props) {
         try {
             await axios.post('/api/v1/auth/logout')
             localStorage.removeItem("authToken")
+            localStorage.removeItem("username")
             toast.success("logout successful!")
             navigate("/login")
         } catch (error) {
@@ -58,6 +59,11 @@ function Navbar(props) {
                 <ListItem className='listitem' disablePadding>
                     <ListItemButton  >
                         <Link to="/" className='drawerlinks'> <ListItemText>Home</ListItemText></Link>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className='listitem' disablePadding>
+                    <ListItemButton  >
+                        <Link to="/" className='drawerlinks'> <ListItemText>Tools</ListItemText></Link>
                     </ListItemButton>
                 </ListItem>
                 {!loggedIn ? (
@@ -90,13 +96,7 @@ function Navbar(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" position='static'
-                sx={{
-                    backgroundColor: "black",
-                    '&:hover': {
-                        boxShadow: "0 0 40px #ffffff",
-                    }
-                }} >
+            <AppBar component="nav" position='static'>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -117,6 +117,7 @@ function Navbar(props) {
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         <Button sx={{ color: 'white', fontSize: "15px" }}>
                             <Link className='navlinks' to="/">Home</Link>
+                            <Link className='navlinks' to="/Tools">Tools</Link>
                             {
                                 loggedIn ? (<Link className='navlinks' to="/login" onClick={handleLogout}>Logout</Link>) : (<><Link className='navlinks' to="/register">Sign up</Link><Link className='navlinks' to="/login">Login</Link></>)
                             }

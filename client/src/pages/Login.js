@@ -19,10 +19,12 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post('/api/v1/auth/login', { email, password })
+            const result = await axios.post('/api/v1/auth/login', { email, password })
+            const name = result.data.user.username
+            localStorage.setItem("username", name);
             toast.success("Login successful!")
             localStorage.setItem("authToken", true)
-            navigate('/menu')
+            navigate('/tools', { state: { name } });
         } catch (err) {
             console.log(err)
             if (err.response.data.error) {
@@ -36,42 +38,24 @@ const Login = () => {
 
     return (
         <Box
-            className='box1'
             style={{ marginTop: "30px" }}
             width={isNotMobile ? '40%' : '80%'}
             p={'40px'} m={'10rem auto'}
             borderRadius={5}
-            sx={{ boxShadow: 5, backgroundColor: "rgb(47, 53, 67)" }}>
+            sx={{
+                boxShadow: 24,
+                backgroundColor: "white"
+            }}>
             <Collapse in={!!error}>
                 <Alert severity='error' sx={{ mb: 2 }}>Invalid credentials</Alert>
             </Collapse>
             <form onSubmit={handleSubmit} method='POST'>
-                <Typography variant='h4' sx={{ color: "white" }}>Sign In</Typography>
+                <Typography variant='h4'>Sign In</Typography>
                 <TextField
                     label="email" required
                     type='email'
                     margin='normal'
                     fullWidth value={email}
-                    sx={{
-                        '& .MuiInputBase-root': {
-                            color: 'white',
-                            '& .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                            '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                        },
-                        '& .MuiInputLabel-root': {
-                            color: 'white',
-                            '&.Mui-focused': {
-                                color: 'white',
-                            },
-                        },
-                    }}
                     onChange={(e) => { setEmail(e.target.value) }}>
                 </TextField>
                 <TextField
@@ -79,26 +63,6 @@ const Login = () => {
                     type='password'
                     margin='normal'
                     fullWidth value={password}
-                    sx={{
-                        '& .MuiInputBase-root': {
-                            color: 'white',
-                            '& .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                            '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'white',
-                            },
-                        },
-                        '& .MuiInputLabel-root': {
-                            color: 'white',
-                            '&.Mui-focused': {
-                                color: 'white',
-                            },
-                        },
-                    }}
                     onChange={(e) => { setPassword(e.target.value) }}>
                 </TextField>
                 <Button
@@ -107,19 +71,13 @@ const Login = () => {
                     fullWidth variant='contained'
                     size='large'
                     sx={{
-                        color: 'white',
                         mt: 2,
-                        '&:hover': {
-                            backgroundColor: "#ffffff",
-                            color: "rgb(0, 0, 0)",
-                            boxShadow: " 0 0 25px rgb(4, 255, 0), 0 0 100px rgb(4, 255, 0)",
-                        },
                     }}>
                     Sign Up
                 </Button>
-                <Typography color="white" mt={2}>Don't have an account?
-                    <Link to="/register" style={{ textDecoration: "none" }}>
-                        <b style={{ color: "white", borderBottom: "2px solid white", marginLeft: "4px" }}>
+                <Typography mt={2}>Don't have an account?
+                    <Link to="/register" >
+                        <b style={{ marginLeft: "4px" }}>
                             Please Register</b>
                     </Link>
                 </Typography>

@@ -7,6 +7,9 @@ const dotenv = require("dotenv")
 const connectDB = require("./config/db")
 const errorHandler = require("./middelware/errorMiddleware")
 
+
+
+
 // routes path
 const authRoutes = require("./routes/authRoutes")
 const geminiRoutes = require("./routes/geminiRoutes")

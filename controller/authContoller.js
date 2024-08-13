@@ -6,6 +6,7 @@ const errorResponse = require("../utils/errorResponse")
 exports.sendToken = (user, statusCode, res) => {
     const token = user.getSignedToken(res)
     res.status(statusCode).json({
+        user,
         success: true,
         token,
     })
@@ -46,8 +47,6 @@ exports.loginController = async (req, res, next) => {
         if (!isMatch) {
             return next(new errorResponse("invalid credential", 401))
         }
-
-        // res
         this.sendToken(user, 200, res)
     } catch (error) {
         console.log(error)

@@ -6,6 +6,10 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import { Toaster } from 'react-hot-toast'
 import Summary from './pages/Summary';
+import Tools from './pages/Tools';
+import Paragraph from './pages/Paragraph';
+import Chatbot from './pages/Chatbot';
+import JS from './pages/JS';
 
 function App() {
   return (
@@ -16,7 +20,11 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/tools' element={<Tools />} />
         <Route path='/summary' element={<Summary />} />
+        <Route path='/paragraph' element={<Paragraph />} />
+        <Route path='/chatbot' element={<Chatbot />} />
+        <Route path='/js' element={<JS />} />
       </Routes>
     </>
   );
