@@ -9,7 +9,7 @@ const Paragraph = () => {
     useEffect(() => {
         const loggedIn = JSON.parse(localStorage.getItem("authToken"))
         if (!loggedIn) {
-            toast.error("Please log in to use the available tools.")
+            toast.error("Please sign in to use the available tools.")
             navigate("/login", { replace: true })
             return
         }
@@ -73,7 +73,7 @@ const Paragraph = () => {
                     Generate
                 </Button>
                 <Typography mt={2}>Not this tool?
-                    <Link to="/menu">
+                    <Link to="/tools">
                         <b style={{ marginLeft: "4px" }}>
                             Go back</b>
                     </Link>

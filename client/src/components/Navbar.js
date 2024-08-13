@@ -41,7 +41,7 @@ function Navbar(props) {
             await axios.post('/api/v1/auth/logout')
             localStorage.removeItem("authToken")
             localStorage.removeItem("username")
-            toast.success("logout successful!")
+            toast.success("Sign Out successful!")
             navigate("/login")
         } catch (error) {
             console.log(error)
@@ -52,7 +52,7 @@ function Navbar(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                Artiligence
             </Typography>
             <Divider />
             <List >
@@ -63,7 +63,7 @@ function Navbar(props) {
                 </ListItem>
                 <ListItem className='listitem' disablePadding>
                     <ListItemButton  >
-                        <Link to="/" className='drawerlinks'> <ListItemText>Tools</ListItemText></Link>
+                        <Link to="/tools" className='drawerlinks'> <ListItemText>Tools</ListItemText></Link>
                     </ListItemButton>
                 </ListItem>
                 {!loggedIn ? (
@@ -75,7 +75,7 @@ function Navbar(props) {
                         </ListItem>
                         <ListItem className='listitem' disablePadding>
                             <ListItemButton>
-                                <Link to="/login" className='drawerlinks'> <ListItemText>Login</ListItemText></Link>
+                                <Link to="/login" className='drawerlinks'> <ListItemText>Sign In</ListItemText></Link>
                             </ListItemButton>
                         </ListItem>
                     </>
@@ -83,7 +83,7 @@ function Navbar(props) {
                 ) : (
                     <ListItem className='listitem' disablePadding>
                         <ListItemButton>
-                            <Link to="/login" className='drawerlinks' onClick={handleLogout}> <ListItemText>Logout</ListItemText></Link>
+                            <Link to="/login" className='drawerlinks' onClick={handleLogout}> <ListItemText>Sign Out</ListItemText></Link>
                         </ListItemButton>
                     </ListItem>
                 )}
@@ -96,7 +96,7 @@ function Navbar(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" position='static'>
+            <AppBar component="nav" position='static' sx={{ boxShadow: 10 }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -112,14 +112,14 @@ function Navbar(props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        MUI
+                        Artiligence
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         <Button sx={{ color: 'white', fontSize: "15px" }}>
                             <Link className='navlinks' to="/">Home</Link>
                             <Link className='navlinks' to="/Tools">Tools</Link>
                             {
-                                loggedIn ? (<Link className='navlinks' to="/login" onClick={handleLogout}>Logout</Link>) : (<><Link className='navlinks' to="/register">Sign up</Link><Link className='navlinks' to="/login">Login</Link></>)
+                                loggedIn ? (<Link className='navlinks' to="/login" onClick={handleLogout}>Sign Out</Link>) : (<><Link className='navlinks' to="/register">Sign Up</Link><Link className='navlinks' to="/login">Sign In</Link></>)
                             }
 
                         </Button>

@@ -22,7 +22,7 @@ const Login = () => {
             const result = await axios.post('/api/v1/auth/login', { email, password })
             const name = result.data.user.username
             localStorage.setItem("username", name);
-            toast.success("Login successful!")
+            toast.success("Sign In successful!")
             localStorage.setItem("authToken", true)
             navigate('/tools', { state: { name } });
         } catch (err) {
@@ -44,7 +44,7 @@ const Login = () => {
             borderRadius={5}
             sx={{
                 boxShadow: 24,
-                backgroundColor: "white"
+                backgroundColor: "white",
             }}>
             <Collapse in={!!error}>
                 <Alert severity='error' sx={{ mb: 2 }}>Invalid credentials</Alert>

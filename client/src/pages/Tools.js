@@ -11,9 +11,10 @@ const Tools = () => {
     const navigate = useNavigate()
     const name = localStorage.getItem("username") || 'Guest';
     return (
-        <><Typography textAlign="center" mt={4} fontWeight="bold" variant='h3'>
-            {`Welcome! ${name}`}
-        </Typography>
+        <Box mb={10}>
+            <Typography textAlign="center" mt={4} fontWeight="bold" variant='h3'>
+                {`Welcome! ${name}`}
+            </Typography>
             <Box sx={{
                 display: 'flex',
                 flexDirection: { xs: 'column', sm: 'row' },
@@ -177,7 +178,7 @@ const Tools = () => {
                     </Card>
                 </Box>
             </Box>
-        </>
+        </Box>
 
     )
 }
