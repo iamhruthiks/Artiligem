@@ -10,6 +10,17 @@ import Tools from './pages/Tools';
 import Paragraph from './pages/Paragraph';
 import Chatbot from './pages/Chatbot';
 import JS from './pages/JS';
+import ReactGA from "react-ga4"
+
+const ga4_id = process.env.REACT_APP_GA4
+console.log(ga4_id)
+
+ReactGA.initialize(ga4_id)
+
+ReactGA.send({
+  hitType: "pageview",
+  page: window.location.pathname
+})
 
 function App() {
   return (
