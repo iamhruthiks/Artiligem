@@ -6,8 +6,7 @@ const colors = require("colors")
 const dotenv = require("dotenv")
 const connectDB = require("./config/db")
 const errorHandler = require("./middelware/errorMiddleware")
-
-
+const path = require("path")
 
 
 // routes path
@@ -34,8 +33,15 @@ app.use(errorHandler)
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/gemini", geminiRoutes)
 
+// use the client app
+app.use(express.static(path.join(__dirname, '/client/build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build/index.html'))
+})
+
 const PORT = process.env.PORT || 8080
 //listen server
 app.listen(PORT, () => {
-    console.log(`server running in ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white)
+    console.log(`server running in ${process.env.MODE} mode on port ${PORT}`.bgCyan.white)
 })

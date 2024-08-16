@@ -12,7 +12,10 @@ const Tools = () => {
     const name = localStorage.getItem("username") || 'Guest';
     return (
         <Box mb={10}>
-            <Typography textAlign="center" mt={4} fontWeight="bold" variant='h3'>
+            <Typography textAlign="center" mt={4} fontWeight="bold" variant='h3'
+                sx={{
+                    fontSize: { xs: '34px', sm: '32px', md: '40px' },
+                }}>
                 {`Welcome! ${name}`}
             </Typography>
             <Box sx={{

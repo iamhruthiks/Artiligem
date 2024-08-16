@@ -42,10 +42,9 @@ const Paragraph = () => {
 
     return (
         <Box
-            className='box2'
             style={{ marginTop: "30px" }}
             width={isNotMobile ? '40%' : '80%'}
-            p={'40px'} m={'10rem auto'}
+            p={'20px'} m={'10rem auto'}
             borderRadius={5}
             sx={{ boxShadow: 5, backgroundColor: "white" }}>
             <Collapse in={!!error}>
@@ -60,7 +59,10 @@ const Paragraph = () => {
                     multiline={true}
                     margin='normal'
                     fullWidth value={text}
-                    onChange={(e) => { setText(e.target.value) }}>
+                    onChange={(e) => { setText(e.target.value) }}
+                    sx={{
+                        fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                    }}>
                 </TextField>
                 <Button
                     color='warning'
@@ -81,11 +83,11 @@ const Paragraph = () => {
             </form>
             {paragraph ? (
                 <Card sx={{ mt: 4, height: "500px", boxShadow: 10 }}>
-                    <Typography p={2} sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.5, overflow: 'auto', maxHeight: '100%' }}>{paragraph}</Typography>
+                    <Typography p={2} sx={{ fontSize: { xs: '16px', sm: '18px', md: '20px' }, whiteSpace: 'pre-wrap', lineHeight: 1.5, overflow: 'auto', maxHeight: '100%' }}>{paragraph}</Typography>
                 </Card>
             ) : (
                 <Card sx={{ mt: 4, height: "500px", boxShadow: 10 }}>
-                    <Typography variant='h5' sx={{ textAlign: "center", verticalAlign: "middel", lineHeight: "450px" }}>Your paragraph will appear here</Typography>
+                    <Typography variant='h5' sx={{ fontSize: { xs: '16px', sm: '18px', md: '20px' }, textAlign: "center", verticalAlign: "middel", lineHeight: "450px" }}>Your paragraph will appear here</Typography>
                 </Card>
             )}
         </Box >

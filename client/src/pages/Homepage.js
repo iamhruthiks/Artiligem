@@ -66,13 +66,19 @@ export default function Home() {
                 mt: "80px"
             }}
         >
-            <Box sx={{ width: '70%' }}>
+            <Box sx={{ width: '80%' }}>
                 <Stack spacing={10} mb={8}>
                     <Item sx={{ p: 5, boxShadow: 24 }}>
-                        <Typography color="primary.main" variant='h3' mb="40px" fontWeight="bold">
+                        <Typography color="primary.main" variant='h3' mb="40px" fontWeight="bold"
+                            sx={{
+                                fontSize: { xs: '34px', sm: '32px', md: '40px' },
+                            }}>
                             Welcome to Artiligence
                         </Typography>
-                        <Typography variant='h5' textAlign="left">
+                        <Typography variant='h5' textAlign="left"
+                            sx={{
+                                fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                            }}>
                             Artiligence, is your one-stop AI companion for all your content creation needs!
                             Our cutting-edge app harnesses the power of artificial intelligence to help you
                             generate engaging content, streamline your workflow, and boost your productivity.
@@ -100,7 +106,10 @@ export default function Home() {
                                 </Tabs>
                             </Box>
                             <CustomTabPanel value={value} index={0}>
-                                <Typography variant='h6' textAlign="left">
+                                <Typography variant='h6' textAlign="left"
+                                    sx={{
+                                        fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                                    }}>
                                     <ul>
                                         <li><b>Summary Generator:</b> Quickly summarize long articles, research papers,
                                             or any text with our advanced AI summarization tool.
@@ -125,7 +134,10 @@ export default function Home() {
                                 </Typography>
                             </CustomTabPanel>
                             <CustomTabPanel value={value} index={1}>
-                                <Typography variant='h6' textAlign="left">
+                                <Typography variant='h6' textAlign="left"
+                                    sx={{
+                                        fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                                    }}>
                                     <ul>
                                         <li><b>Boost Productivity:</b>Automate repetitive tasks and free up time for more important work.</li><br />
                                         <li><b>Enhance Creativity:</b>Overcome creative blocks and generate fresh ideas with our AI-powered tools.</li><br />
@@ -137,10 +149,16 @@ export default function Home() {
                         </Box>
                     </Item>
                     <Item sx={{ p: 4, boxShadow: 24 }}>
-                        <Typography color="primary.main" variant='h4' mb="30px" fontWeight="bold">
+                        <Typography color="primary.main" variant='h4' mb="30px" fontWeight="bold"
+                            sx={{
+                                fontSize: { xs: '34px', sm: '32px', md: '40px' },
+                            }}>
                             Get Started
                         </Typography>
-                        <Typography variant='h6' textAlign="left">
+                        <Typography variant='h6' textAlign="left"
+                            sx={{
+                                fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                            }}>
                             Ready to experience the power of Artiligence? Sign Up to Artiligence now and start unlocking your full potential.
                             Whether you're a writer, developer, student, or professional, our AI tools are designed to help you succeed in the digital age.
                             <br /><br />
