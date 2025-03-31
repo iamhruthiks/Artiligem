@@ -102,6 +102,19 @@ Before you begin, ensure you have the following installed on your machine:
    npm run dev
    ```
 
+## Screenshots
+<kbd><img width="945" alt="home1" src="https://github.com/user-attachments/assets/4d27a809-d706-44c1-b90d-f24c4543b640"></kbd><hr>
+<kbd><img width="947" alt="home2" src="https://github.com/user-attachments/assets/0ffedb46-836c-46f2-abff-d31fb1b33d3b"></kbd><hr>
+<kbd><img width="947" alt="home3" src="https://github.com/user-attachments/assets/48d9934e-7f0b-4856-bf86-72d3e798ff2c"></kbd><hr>
+<kbd><img width="947" alt="home4" src="https://github.com/user-attachments/assets/719a82de-7a0a-49aa-8e05-73294d9b0c50"></kbd><hr>
+<kbd><img width="947" alt="signup" src="https://github.com/user-attachments/assets/2fe3ac2f-78ba-436b-9065-4f0d836e675b"></kbd><hr>
+<kbd><img width="945" alt="signin" src="https://github.com/user-attachments/assets/3db03dca-df94-427e-81dd-3617ffe99f4c"></kbd><hr>
+<kbd><img width="945" alt="tools" src="https://github.com/user-attachments/assets/4c031497-8ceb-429c-b23e-335cdb34d485"></kbd><hr>
+<kbd><img width="947" alt="paragraph" src="https://github.com/user-attachments/assets/51a9d08b-4e18-455d-b75c-b630c35f48a3"></kbd><hr>
+<kbd><img width="946" alt="chatbot" src="https://github.com/user-attachments/assets/aaf7a047-9be7-4058-ba6f-4f3454358228"></kbd><hr>
+<kbd><img width="946" alt="mob1" src="https://github.com/user-attachments/assets/d8b745d4-2427-49d1-a2ae-d35a691e062e"></kbd><hr>
+<kbd><img width="948" alt="mob2" src="https://github.com/user-attachments/assets/e9bc646f-7e5e-4bda-9d55-6bddf32f1553"></kbd><hr>
+
 ## Contributing Guidelines
 
 I welcome contributions! To get started, please fork the repository and submit a pull request. Ensure that your code adheres to the coding standards of this project.
