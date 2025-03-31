@@ -45,23 +45,6 @@ Artiligem is a full-stack (MERN) AI web application designed to empower creativi
 - **Git:** Essential for version control and collaboration in software development.
 - **Render** To host the application.
 
-## Screenshots
-
-<kbd><img width="945" alt="home1" src="https://github.com/user-attachments/assets/0028cb69-d964-475b-b7a6-90ac2bea98cb"></kbd><hr>
-<kbd><img width="947" alt="home2" src="https://github.com/user-attachments/assets/d4191588-6339-45c0-8537-98f8fd36e63c"></kbd><hr>
-<kbd><img width="947" alt="home3" src="https://github.com/user-attachments/assets/f9e14350-da87-4834-a046-622609e9ac14"></kbd><hr>
-<kbd><img width="947" alt="home4" src="https://github.com/user-attachments/assets/46444979-7614-4f79-929b-71bb155c01b8"></kbd><hr>
-<kbd><img width="947" alt="signup" src="https://github.com/user-attachments/assets/0a66fc49-0df5-4f26-9f19-706e771e2a9a"></kbd><hr>
-<kbd><img width="945" alt="signin" src="https://github.com/user-attachments/assets/3251f3d1-596e-43c9-847c-a5b214b59bd7"></kbd><hr>
-<kbd><img width="945" alt="tools" src="https://github.com/user-attachments/assets/c0889152-2969-4d42-9a77-e11786e9ddd0"></kbd><hr>
-<kbd><img width="947" alt="tools1" src="https://github.com/user-attachments/assets/23f5d954-8bf0-4b1c-8d03-f8afc8d93182"></kbd><hr>
-<kbd><img width="943" alt="summary" src="https://github.com/user-attachments/assets/d277e846-ea20-4b6c-b1f8-a05e209fb3b1"></kbd><hr>
-<kbd><img width="947" alt="paragraph" src="https://github.com/user-attachments/assets/46ab8b09-d483-47cc-b62e-97a421139c38"></kbd><hr>
-<kbd><img width="946" alt="chatbot" src="https://github.com/user-attachments/assets/f6fee681-cbc9-4b9b-8458-10308a5dae85"></kbd><hr>
-<kbd><img width="946" alt="js" src="https://github.com/user-attachments/assets/c0d04f4b-d878-4844-8c0a-6c64fc5872f8"></kbd><hr>
-<kbd><img width="946" alt="mob1" src="https://github.com/user-attachments/assets/88321553-3e29-442a-88c8-6ee0efc0280b"></kbd><hr>
-<kbd><img width="948" alt="mob2" src="https://github.com/user-attachments/assets/d7a40a39-d8c8-42c7-904b-291fce7d0177"></kbd><hr>
-
 ## Installation<br>
 
 To run the application locally, follow these steps:
