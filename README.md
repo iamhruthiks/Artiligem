@@ -1,7 +1,9 @@
-# Artiligence
-Artiligence is a full-stack (MERN) AI web application designed to empower creativity and enhance productivity through the integration of advanced AI technology. Leveraging Google’s Gemini API, Artiligence delivers a powerful suite of tools specifically tailored for writers, developers, and anyone in need of intelligent content generation.
+# Artiligem
+
+Artiligem is a full-stack (MERN) AI web application designed to empower creativity and enhance productivity through the integration of advanced AI technology. Leveraging Google’s Gemini API, Artiligem delivers a powerful suite of tools specifically tailored for writers, developers, and anyone in need of intelligent content generation.
 
 ## Features
+
 - **Authentication:** The application includes user authentication functionality, allowing users to register and log in securely.
 
 - **Authorization:** Access to the tools requires users to be logged in, and certain actions are restricted to ensure that only authorized users can access the tools.
@@ -41,10 +43,10 @@ Artiligence is a full-stack (MERN) AI web application designed to empower creati
 - **Google Analytics 4:** Useful for tracking and analyzing website traffic and user behavior.
 
 - **Git:** Essential for version control and collaboration in software development.
-  
 - **Render** To host the application.
 
 ## Screenshots
+
 <kbd><img width="945" alt="home1" src="https://github.com/user-attachments/assets/0028cb69-d964-475b-b7a6-90ac2bea98cb"></kbd><hr>
 <kbd><img width="947" alt="home2" src="https://github.com/user-attachments/assets/d4191588-6339-45c0-8537-98f8fd36e63c"></kbd><hr>
 <kbd><img width="947" alt="home3" src="https://github.com/user-attachments/assets/f9e14350-da87-4834-a046-622609e9ac14"></kbd><hr>
@@ -60,8 +62,8 @@ Artiligence is a full-stack (MERN) AI web application designed to empower creati
 <kbd><img width="946" alt="mob1" src="https://github.com/user-attachments/assets/88321553-3e29-442a-88c8-6ee0efc0280b"></kbd><hr>
 <kbd><img width="948" alt="mob2" src="https://github.com/user-attachments/assets/d7a40a39-d8c8-42c7-904b-291fce7d0177"></kbd><hr>
 
-
 ## Installation<br>
+
 To run the application locally, follow these steps:
 
 ### Prerequisites
@@ -73,44 +75,58 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. **Clone the Repository:** <br>
    Open your terminal or command prompt and run:
+
    ```bash
-   git clone https://github.com/iamhruthiks/Artiligence.git
+   git clone https://github.com/iamhruthiks/Artiligem.git
+
+   ```
 
 2. **Install dependencies:** <br>
    Navigate into the project directory and install the dependencies:
-    ```bash 
-    cd Artiligence
-    npm install
-    cd client
-    npm install
 
-4. **Set up environment variables:** <br>
+   ```bash
+   cd Artiligem
+   npm install
+   cd client
+   npm install
+
+   ```
+
+3. **Set up environment variables:** <br>
    Make sure to replace these placeholders with your actual values when setting up the environment variables:
- - Create a `.env` file in the root directory of the project and add the following environment variables:
-    ```bash
-    MODE = development
-    DB_URL= <Your local MongoDB URL>
-    JWT_ACCESS_SECRET = <Your secret>
-    JWT_ACCESS_EXPIREIN = 15min
-    JWT_REFRESH_TOKEN = <Your secret> 
-    JWT_REFRESH_EXPIREIN = 15days
-    API_KEY=<Your gemini api key>
 
- - Create a `.env` file inside the client folder and add the following environment variables:
-    ```bash
-    REACT_APP_GA4=<Your google analytics 4 measurement ID>
+- Create a `.env` file in the root directory of the project and add the following environment variables:
+
+  ```bash
+  MODE = development
+  DB_URL= <Your local MongoDB URL>
+  JWT_ACCESS_SECRET = <Your secret>
+  JWT_ACCESS_EXPIREIN = 15min
+  JWT_REFRESH_TOKEN = <Your secret>
+  JWT_REFRESH_EXPIREIN = 15days
+  API_KEY=<Your gemini api key>
+
+  ```
+
+- Create a `.env` file inside the client folder and add the following environment variables:
+  ```bash
+  REACT_APP_GA4=<Your google analytics 4 measurement ID>
+  ```
 
 4. **Run the application:** <br>
-   Ensure you are inside the Artiligence folder, then run:
+   Ensure you are inside the Artiligem folder, then run:
    ```bash
    npm run dev
+   ```
 
 ## Contributing Guidelines
 
 I welcome contributions! To get started, please fork the repository and submit a pull request. Ensure that your code adheres to the coding standards of this project.
 
 ### Coding Standards
-To maintain consistency and quality in the Artiligence project, please adhere to the following coding standards.
+
+To maintain consistency and quality in the Artiligem project, please adhere to the following coding standards.
+
 - **Technology Stack:** Contributions should primarily utilize the MERN stack (MongoDB, Express.js, React, Node.js) or JavaScript. This ensures consistency and effectively leverages the project's architecture.
 - **Code Clarity:** Write clear and descriptive names for variables, functions, and classes.
 - **Commenting:** Use comments to explain complex logic and decisions in your code.
@@ -118,13 +134,9 @@ To maintain consistency and quality in the Artiligence project, please adhere to
 - **Commit Messages:** Write clear and concise commit messages that describe the changes made.
 
 ## Author
+
 [Hruthik S](https://github.com/iamhruthiks)
 
 ## Contact
+
 For questions or support, please connect with me on [LinkedIn](https://www.linkedin.com/in/hruthiks).
-
-
-
-
-
-
